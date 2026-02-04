@@ -1,172 +1,234 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mann Patel | CS Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mann Patel | CS Portfolio</title>
 
-    <!-- Google Font (reputable, widely used) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #f4f6fb;
-            color: #333;
-        }
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+<style>
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2933;
+    --accent: #6366f1;
+    --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-        }
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e5e7eb;
+}
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+header {
+    background: var(--gradient);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
 
-        h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
+header h1 {
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-            transition: transform 0.2s ease;
-        }
+header p {
+    font-size: 1.1rem;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.buttons {
+    margin-top: 25px;
+}
 
-        .skills span {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 20px;
-            margin: 6px;
-            font-size: 0.9rem;
-        }
+.buttons a {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 22px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
 
-        a.button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 22px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 10px;
-            font-weight: 500;
-        }
+.buttons a:hover {
+    background: rgba(255,255,255,0.35);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #1f2933;
-            color: #cbd5e1;
-        }
+.toggle-btn {
+    margin-top: 20px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
-        footer a {
-            color: #a5b4fc;
-            text-decoration: none;
-        }
-    </style>
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.skills span {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: 0.85rem;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+footer {
+    background: #020617;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer a {
+    color: #a5b4fc;
+    text-decoration: none;
+}
+
+/* Mobile-first polish */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.1rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
     <h1>Mann Patel</h1>
-    <p>Computer Science Student | Software & Systems Enthusiast</p>
-    <p>
-        <a class="button" href="resume.pdf">Download Resume</a>
-    </p>
+    <p>Computer Science Student | Software & Systems</p>
+
+    <div class="buttons">
+        <a href="resume.pdf" target="_blank">
+            <i class="fa-solid fa-eye"></i> View Resume
+        </a>
+        <a href="resume.pdf" download>
+            <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/yourusername" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+        </a>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 </header>
 
 <section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            Computer Science student with hands-on experience building practical software applications.
-            Strong foundation in programming, databases, and problem-solving, with a focus on creating
-            clean and efficient solutions for real-world problems.
-        </p>
-    </div>
 
-    <h2>Skills</h2>
-    <div class="card skills">
-        <span>C++</span>
-        <span>Python</span>
-        <span>MySQL</span>
-        <span>SQLite</span>
-        <span>Object-Oriented Programming</span>
-        <span>File Handling</span>
-        <span>Problem Solving</span>
-    </div>
+<h2><i class="fa-solid fa-user"></i> About Me</h2>
+<div class="card">
+    Computer Science student with hands-on experience developing practical software applications.
+    Strong foundation in programming, databases, and problem-solving, with a focus on real-world systems
+    and continuous learning.
+</div>
 
-    <h2>Projects</h2>
+<h2><i class="fa-solid fa-code"></i> Skills</h2>
+<div class="card skills">
+    <span><i class="fa-brands fa-cuttlefish"></i> C++</span>
+    <span><i class="fa-brands fa-python"></i> Python</span>
+     <span><i class="fa-solid fa-database"></i> Java</span>
+    <span><i class="fa-solid fa-database"></i> MySQL</span>
+    <span><i class="fa-solid fa-database"></i> SQLite</span>
+    <span><i class="fa-solid fa-cubes"></i> OOP</span>
+    <span><i class="fa-solid fa-brain"></i> Problem Solving</span>
+</div>
 
-    <div class="card">
-        <h3>Motion Detection Security System</h3>
-        <p>
-            Developed a real-time motion detection system using computer vision techniques
-            to monitor video feeds and trigger alerts.
-        </p>
-        <ul>
-            <li>Implemented motion detection using frame differencing</li>
-            <li>Automated email alerts when motion was detected</li>
-            <li>Recorded video clips during motion events</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, OpenCV, SMTP</p>
-    </div>
+<h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
 
-    <div class="card">
-        <h3>Student Management System</h3>
-        <p>
-            Built a desktop application for managing student records with a clean GUI
-            and persistent database storage.
-        </p>
-        <ul>
-            <li>Implemented full CRUD operations</li>
-            <li>Designed intuitive graphical interface</li>
-            <li>Integrated SQLite database</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, PyQt6, SQLite</p>
-    </div>
+<div class="card project">
+    <h3>Motion Detection Security System</h3>
+    <img src="motion-demo.gif" alt="Motion Detection Demo">
+    <ul>
+        <li>Real-time motion detection using computer vision</li>
+        <li>Automated email alerts on motion events</li>
+        <li>Event-based video recording</li>
+    </ul>
+    <p><strong>Tech:</strong> Python, OpenCV, SMTP</p>
+</div>
 
-    <h2>Education</h2>
-    <div class="card">
-        <p>
-            <strong>Bachelor of Science in Computer Science</strong><br>
-            Expected Graduation: 20XX
-        </p>
-    </div>
+<div class="card project">
+    <h3>Student Management System</h3>
+    <img src="student-app.png" alt="Student Management App">
+    <ul>
+        <li>Full CRUD functionality</li>
+        <li>User-friendly GUI design</li>
+        <li>SQLite database integration</li>
+    </ul>
+    <p><strong>Tech:</strong> Python, PyQt6, SQLite</p>
+</div>
+
+<h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+<div class="card">
+    <strong>Bachelor of Science in Computer Science</strong><br>
+    Expected Graduation: 2028
+</div>
+
 </section>
 
 <footer>
-    <p>
-        GitHub:
-        <a href="https://github.com/yourusername">github.com/yourusername</a>
-    </p>
+    © 2026 Mann Patel |
+    <a href="https://MannPatel8284.github.io">GitHub</a> |
+    <a href="https://www.linkedin.com/in/mann-patel-9199353a9/">LinkedIn</a>
 </footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
