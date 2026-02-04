@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mann Patel | CS Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mann Patel | Portfolio</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- Font Awesome Icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
-    --bg: #f4f6fb;
+    --bg: #f5f7fb;
     --card: #ffffff;
-    --text: #1f2933;
+    --text: #0f172a;
+    --muted: #475569;
     --accent: #6366f1;
     --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
 }
@@ -24,6 +25,11 @@ body.dark {
     --bg: #0f172a;
     --card: #1e293b;
     --text: #e5e7eb;
+    --muted: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -31,18 +37,18 @@ body {
     font-family: 'Poppins', sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s, color 0.3s;
 }
 
 header {
     background: var(--gradient);
     color: white;
-    padding: 70px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     margin-bottom: 10px;
 }
 
@@ -58,12 +64,12 @@ header p {
     display: inline-block;
     margin: 8px;
     padding: 12px 22px;
-    border-radius: 25px;
+    border-radius: 30px;
     background: rgba(255,255,255,0.2);
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.2s ease;
+    transition: background 0.2s;
 }
 
 .buttons a:hover {
@@ -71,7 +77,7 @@ header p {
 }
 
 .toggle-btn {
-    margin-top: 20px;
+    margin-top: 25px;
     background: none;
     border: 1px solid rgba(255,255,255,0.4);
     color: white;
@@ -83,7 +89,7 @@ header p {
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 h2 {
@@ -93,16 +99,18 @@ h2 {
 
 .card {
     background: var(--card);
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    animation: fadeUp 0.6s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .skills span {
@@ -117,7 +125,7 @@ h2 {
 
 .project img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
     margin: 15px 0;
 }
 
@@ -133,7 +141,6 @@ footer a {
     text-decoration: none;
 }
 
-/* Mobile-first polish */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.1rem;
@@ -146,19 +153,15 @@ footer a {
 
 <header>
     <h1>Mann Patel</h1>
-    <p>Computer Science Student | Software & Systems</p>
+    <p>Computer Science With AI Student | Software Developer</p>
 
     <div class="buttons">
-        <a href="resume.pdf" target="_blank">
-            <i class="fa-solid fa-eye"></i> View Resume
-        </a>
-        <a href="resume.pdf" download>
-            <i class="fa-solid fa-download"></i> Download Resume
-        </a>
-        <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">
+        <a href="Mann Patel Resume.pdf" target="_blank"><i class="fa-solid fa-eye"></i> View Resume</a>
+        <a href="Mann Patel Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+        <a href="https://www.linkedin.com/in/mann-patel-9199353a9">LinkedIn target="_blank">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
-        <a href="https://github.com/yourusername" target="_blank">
+        <a href="https://github.com/MannPatel8284">GitHub" target="_blank">
             <i class="fa-brands fa-github"></i> GitHub
         </a>
     </div>
@@ -167,67 +170,82 @@ footer a {
 </header>
 
 <section>
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <div class="card fade">
+        Computer Science student with hands-on experience building practical software applications.
+        Strong foundation in programming, databases, and structured problem-solving.
+    </div>
 
-<h2><i class="fa-solid fa-user"></i> About Me</h2>
-<div class="card">
-    Computer Science student with hands-on experience developing practical software applications.
-    Strong foundation in programming, databases, and problem-solving, with a focus on real-world systems
-    and continuous learning.
+    <h2><i class="fa-solid fa-code"></i> Skills</h2>
+<div class="card fade skills">
+    <span>C++</span>
+    <span>Python</span>
+    <span>Java</span>
+    <span>SQL / MySQL</span>
+    <span>SQLite</span>
+    <span>Data Structures</span>
+    <span>Object-Oriented Programming (OOP)</span>
+    <span>Problem Solving</span>
+    <span>Git & Version Control</span>
+    <span>OpenCV</span>
+    <span>PyQt6</span>
 </div>
 
-<h2><i class="fa-solid fa-code"></i> Skills</h2>
-<div class="card skills">
-    <span><i class="fa-brands fa-cuttlefish"></i> C++</span>
-    <span><i class="fa-brands fa-python"></i> Python</span>
-     <span><i class="fa-solid fa-database"></i> Java</span>
-    <span><i class="fa-solid fa-database"></i> MySQL</span>
-    <span><i class="fa-solid fa-database"></i> SQLite</span>
-    <span><i class="fa-solid fa-cubes"></i> OOP</span>
-    <span><i class="fa-solid fa-brain"></i> Problem Solving</span>
-</div>
+    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
 
-<h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+    <div class="card fade project">
+        <h3>Motion Detection Security System</h3>
+        <img src="motionpr.jpg" alt="Motion Detection Demo">
+        <ul>
+            <li>Real-time motion detection using OpenCV</li>
+            <li>Email alerts with recorded video</li>
+            <li>Event-based recording system</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, OpenCV, SMTP</p>
+    </div>
 
-<div class="card project">
-    <h3>Motion Detection Security System</h3>
-    <img src="motion-demo.gif" alt="Motion Detection Demo">
-    <ul>
-        <li>Real-time motion detection using computer vision</li>
-        <li>Automated email alerts on motion events</li>
-        <li>Event-based video recording</li>
-    </ul>
-    <p><strong>Tech:</strong> Python, OpenCV, SMTP</p>
-</div>
+    <div class="card fade project">
+        <h3>Student Management System</h3>
+        <img src="student-app.png" alt="Student Management App">
+        <ul>
+            <li>CRUD operations</li>
+            <li>GUI-based desktop application</li>
+            <li>SQLite database integration</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, PyQt6, SQLite</p>
+    </div>
 
-<div class="card project">
-    <h3>Student Management System</h3>
-    <img src="student-app.png" alt="Student Management App">
-    <ul>
-        <li>Full CRUD functionality</li>
-        <li>User-friendly GUI design</li>
-        <li>SQLite database integration</li>
-    </ul>
-    <p><strong>Tech:</strong> Python, PyQt6, SQLite</p>
-</div>
-
-<h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-<div class="card">
-    <strong>Bachelor of Science in Computer Science</strong><br>
-    Expected Graduation: 2028
-</div>
-
+    <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+    <div class="card fade">
+        <strong>Bachelor of Science in Computer Science</strong><br>
+        Expected Graduation: 2028
+    </div>
 </section>
 
 <footer>
     © 2026 Mann Patel |
-    <a href="https://MannPatel8284.github.io">GitHub</a> |
-    <a href="https://www.linkedin.com/in/mann-patel-9199353a9/">LinkedIn</a>
+    <a href="https://github.com/MannPatel8284">GitHub</a> |
+    <a href="https://www.linkedin.com/in/mann-patel-9199353a9">LinkedIn</a>
 </footer>
 
 <script>
+/* Dark mode */
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
 }
+
+/* Scroll animation */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".card").forEach(card => {
+    observer.observe(card);
+});
 </script>
 
 </body>
