@@ -1,90 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mann Patel | Computer Science Portfolio</title>
+    <title>Mann Patel | CS Portfolio</title>
+
+    <!-- Google Font (reputable, widely used) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f4f6fb;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        section {
+            max-width: 1000px;
             margin: auto;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 40px 20px;
         }
-        h1, h2 {
-            color: #2c3e50;
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
         }
-        ul {
-            padding-left: 20px;
-        }
-        .project {
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             margin-bottom: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 6px;
+            font-size: 0.9rem;
+        }
+
+        a.button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1f2933;
+            color: #cbd5e1;
+        }
+
+        footer a {
+            color: #a5b4fc;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<h1>Mann Patel</h1>
-<p><strong>Computer Science Student</strong></p>
-<p>
-Email: patelmann274@gmail.com |
-GitHub: MannPatel8284
-</p>
+<header>
+    <h1>Mann Patel</h1>
+    <p>Computer Science Student | Software & Systems Enthusiast</p>
+    <p>
+        <a class="button" href="resume.pdf">Download Resume</a>
+    </p>
+</header>
 
-<h2>About Me</h2>
-<p>
-Computer Science student with hands-on experience developing practical software applications.
-Strong foundation in programming, data handling, and problem-solving, with interest in applying
-technical skills to real-world systems through internships.
-</p>
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            Computer Science student with hands-on experience building practical software applications.
+            Strong foundation in programming, databases, and problem-solving, with a focus on creating
+            clean and efficient solutions for real-world problems.
+        </p>
+    </div>
 
-<h2>Skills</h2>
-<ul>
-    <li><strong>Programming:</strong> C++, Python,Java </li>
-    <li><strong>Databases:</strong> MySQL, SQLite, AWS</li>
-    <li><strong>Concepts:</strong> OOP, File Handling, Loops, Conditionals</li>
-</ul>
+    <h2>Skills</h2>
+    <div class="card skills">
+        <span>C++</span>
+        <span>Python</span>
+        <span>MySQL</span>
+        <span>SQLite</span>
+        <span>Object-Oriented Programming</span>
+        <span>File Handling</span>
+        <span>Problem Solving</span>
+    </div>
 
-<h2>Projects</h2>
+    <h2>Projects</h2>
 
-<div class="project">
-<h3>Motion Detection Security System</h3>
-<p>
-Developed a real-time motion detection application that monitors video input and detects movement
-using computer vision techniques.
-</p>
-<ul>
-    <li>Implemented frame comparison to detect motion events</li>
-    <li>Triggered automated email alerts when motion was detected</li>
-    <li>Recorded video clips during motion events for later review</li>
-</ul>
-<p><strong>Technologies:</strong> Python, OpenCV, SMTP</p>
-</div>
+    <div class="card">
+        <h3>Motion Detection Security System</h3>
+        <p>
+            Developed a real-time motion detection system using computer vision techniques
+            to monitor video feeds and trigger alerts.
+        </p>
+        <ul>
+            <li>Implemented motion detection using frame differencing</li>
+            <li>Automated email alerts when motion was detected</li>
+            <li>Recorded video clips during motion events</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, OpenCV, SMTP</p>
+    </div>
 
-<div class="project">
-<h3>Student Management System</h3>
-<p>
-Built a desktop application to manage student records efficiently using a graphical interface
-and a local database.
-</p>
-<ul>
-    <li>Implemented full CRUD operations for student data</li>
-    <li>Designed user-friendly GUI for easy navigation</li>
-    <li>Integrated SQLite database for persistent storage</li>
-</ul>
-<p><strong>Technologies:</strong> Python, PyQt6, SQLite</p>
-</div>
+    <div class="card">
+        <h3>Student Management System</h3>
+        <p>
+            Built a desktop application for managing student records with a clean GUI
+            and persistent database storage.
+        </p>
+        <ul>
+            <li>Implemented full CRUD operations</li>
+            <li>Designed intuitive graphical interface</li>
+            <li>Integrated SQLite database</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, PyQt6, SQLite</p>
+    </div>
 
-<h2>Education</h2>
-<p>
-Bachelor of Science in Computer Science with Emphasis in AI<br>
-Expected Graduation: 2028
-</p>
+    <h2>Education</h2>
+    <div class="card">
+        <p>
+            <strong>Bachelor of Science in Computer Science</strong><br>
+            Expected Graduation: 20XX
+        </p>
+    </div>
+</section>
 
-<h2>Resume</h2>
-<p>
-<a href="Mann Patel Resume.pdf">Download Resume</a>
-</p>
+<footer>
+    <p>
+        GitHub:
+        <a href="https://github.com/yourusername">github.com/yourusername</a>
+    </p>
+</footer>
 
 </body>
 </html>
