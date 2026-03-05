@@ -1,663 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mann Patel | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- React + ReactDOM + Babel (for JSX in-browser) -->
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-      :root {
-        --bg: #020617;
-        --accent: #38bdf8;
-        --accent-soft: rgba(56, 189, 248, 0.2);
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --border: rgba(148, 163, 184, 0.4);
-        --radius-lg: 18px;
-        --shadow-strong: 0 22px 55px rgba(15, 23, 42, 0.95);
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          sans-serif;
-        background:
-          radial-gradient(circle at top left, #1b2735 0, transparent 55%),
-          radial-gradient(circle at top right, #0f172a 0, transparent 55%),
-          radial-gradient(circle at bottom, #020617 0, #000000 60%);
-        color: var(--text);
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      #root {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-bottom: 40px;
-      }
-
-      /* NAV */
-
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        margin-top: 16px;
-        margin-bottom: 8px;
-        padding: 10px 20px;
-        border-radius: 999px;
-        background: radial-gradient(
-            circle at 0 0,
-            rgba(56, 189, 248, 0.28),
-            transparent 55%
-          ),
-          rgba(15, 23, 42, 0.92);
-        backdrop-filter: blur(14px);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
-      }
-
-      .nav-left {
-        font-weight: 700;
-        letter-spacing: 0.22em;
-        font-size: 12px;
-        text-transform: uppercase;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 16px;
-        font-size: 13px;
-      }
-
-      .nav-links a {
-        padding: 4px 10px;
-        border-radius: 999px;
-        color: var(--muted);
-        transition: all 0.18s ease-out;
-      }
-
-      .nav-links a:hover {
-        background: rgba(15, 23, 42, 0.9);
-        color: var(--text);
-      }
-
-      /* HERO */
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-        gap: 32px;
-        padding: 32px 10px 20px;
-        align-items: center;
-      }
-
-      .hero-left {
-        padding-left: 10px;
-      }
-
-      .hero-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 4px 10px;
-        border-radius: 999px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        font-size: 11px;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-      }
-
-      .hero-title {
-        margin: 14px 0 8px;
-        font-size: 34px;
-        line-height: 1.1;
-      }
-
-      .hero-title span {
-        color: var(--accent);
-      }
-
-      .hero-subtitle {
-        margin: 0 0 18px;
-        font-size: 14px;
-        color: var(--muted);
-        max-width: 420px;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-      }
-
-      .btn-primary,
-      .btn-ghost {
-        font-size: 13px;
-        border-radius: 999px;
-        padding: 8px 16px;
-        cursor: pointer;
-        border: 1px solid transparent;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.18s ease-out;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, #38bdf8, #4f46e5);
-        color: #0b1120;
-        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.8);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 18px 45px rgba(37, 99, 235, 0.95);
-      }
-
-      .btn-ghost {
-        border-color: rgba(148, 163, 184, 0.5);
-        color: var(--muted);
-        background: rgba(15, 23, 42, 0.9);
-      }
-
-      .btn-ghost:hover {
-        border-color: var(--accent);
-        color: var(--text);
-      }
-
-      .hero-right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-orbit {
-        position: relative;
-        width: 210px;
-        height: 210px;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        background: radial-gradient(
-            circle at top,
-            rgba(56, 189, 248, 0.22),
-            transparent 60%
-          ),
-          rgba(15, 23, 42, 0.95);
-        box-shadow: var(--shadow-strong);
-      }
-
-      .hero-orbit-center {
-        position: absolute;
-        inset: 64px;
-        border-radius: 999px;
-        background: radial-gradient(circle at top, #38bdf8, #0f172a);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        font-size: 13px;
-        color: #0b1120;
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.9);
-      }
-
-      .hero-orbit-dot {
-        position: absolute;
-        padding: 4px 10px;
-        border-radius: 999px;
-        font-size: 11px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        color: var(--muted);
-      }
-
-      .hero-orbit-dot-1 {
-        top: 16px;
-        left: 80px;
-      }
-      .hero-orbit-dot-2 {
-        right: -6px;
-        top: 70px;
-      }
-      .hero-orbit-dot-3 {
-        left: -10px;
-        bottom: 70px;
-      }
-      .hero-orbit-dot-4 {
-        bottom: 14px;
-        right: 70px;
-      }
-
-      /* SECTIONS */
-
-      .section {
-        padding: 18px 10px 0;
-      }
-
-      .section-title {
-        font-size: 22px;
-        margin: 10px 10px 4px;
-      }
-
-      .section-subtitle {
-        font-size: 13px;
-        margin: 0 10px 14px;
-        color: var(--muted);
-      }
-
-      /* SKILLS */
-
-      .skills-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 0 10px 10px;
-      }
-
-      .skill-pill {
-        padding: 6px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        background: rgba(15, 23, 42, 0.9);
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      /* PROJECTS */
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-        padding: 0 10px 10px;
-      }
-
-      .project-card {
-        border-radius: var(--radius-lg);
-        background: radial-gradient(
-            circle at top,
-            rgba(15, 23, 42, 0.96),
-            rgba(2, 6, 23, 0.98)
-          );
-        border: 1px solid var(--border);
-        padding: 14px 14px 12px;
-        box-shadow: var(--shadow-strong);
-      }
-
-      .project-header {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin-bottom: 4px;
-      }
-
-      .project-badge {
-        align-self: flex-start;
-        padding: 3px 9px;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-      }
-
-      .project-title {
-        font-size: 17px;
-        margin: 0;
-      }
-
-      .project-desc {
-        margin: 6px 0 8px;
-        font-size: 13px;
-        color: var(--muted);
-      }
-
-      .project-list {
-        margin: 0 0 8px 18px;
-        padding: 0;
-        font-size: 12px;
-        color: #d1d5db;
-      }
-
-      .project-list li {
-        margin-bottom: 4px;
-      }
-
-      .project-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 11px;
-        color: var(--muted);
-      }
-
-      .project-link {
-        color: var(--accent);
-        font-weight: 500;
-      }
-
-      /* EDUCATION & CONTACT */
-
-      .edu-card,
-      .contact-card {
-        margin: 0 10px 10px;
-        padding: 12px 14px;
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--border);
-        background: rgba(15, 23, 42, 0.96);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
-        font-size: 13px;
-      }
-
-      .edu-note {
-        color: var(--muted);
-        margin-top: 8px;
-      }
-
-      .contact-card a {
-        color: var(--accent);
-      }
-
-      /* FOOTER */
-
-      .footer {
-        margin-top: 16px;
-        padding: 10px;
-        font-size: 11px;
-        text-align: center;
-        color: var(--muted);
-      }
-
-      /* RESPONSIVE */
-
-      @media (max-width: 768px) {
-        .hero {
-          grid-template-columns: minmax(0, 1fr);
-        }
-        .hero-right {
-          order: -1;
-          margin-bottom: 8px;
-        }
-        .nav {
-          border-radius: 14px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <script type="text/babel">
-      const { useState } = React;
-
-      function Hero() {
-        return (
-          <section id="home" className="hero">
-            <div className="hero-left">
-              <p className="hero-pill">OpenCV • AI • Fullstack</p>
-              <h1 className="hero-title">
-                Hi, I’m <span>Mann Patel</span>
-              </h1>
-              <p className="hero-subtitle">
-                I build practical AI and computer‑vision systems that solve real
-                problems — from motion‑detection security to in‑store attention
-                analytics.
-              </p>
-              <div className="hero-actions">
-                <a href="#projects" className="btn-primary">
-                  View Projects
-                </a>
-                <a
-                  href="https://github.com/MannPatel8284"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-ghost"
-                >
-                  GitHub Profile
-                </a>
-              </div>
-            </div>
-            <div className="hero-right">
-              <div className="hero-orbit">
-                <div className="hero-orbit-center">MP</div>
-                <div className="hero-orbit-dot hero-orbit-dot-1">Python</div>
-                <div className="hero-orbit-dot hero-orbit-dot-2">OpenCV</div>
-                <div className="hero-orbit-dot hero-orbit-dot-3">React</div>
-                <div className="hero-orbit-dot hero-orbit-dot-4">SQL</div>
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      function Skills() {
-        const skills = [
-          "Python",
-          "C++",
-          "Java",
-          "OpenCV",
-          "MediaPipe",
-          "Flask",
-          "React",
-          "PyQt6",
-          "SQL / MySQL",
-          "SQLite",
-          "Data Structures",
-          "OOP",
-          "Git & GitHub",
-        ];
-
-        return (
-          <section id="skills" className="section">
-            <h2 className="section-title">Skills</h2>
-            <p className="section-subtitle">
-              A mix of low‑level foundations and modern AI tooling.
-            </p>
-            <div className="skills-grid">
-              {skills.map((s) => (
-                <div key={s} className="skill-pill">
-                  {s}
-                </div>
-              ))}
-            </div>
-          </section>
-        );
-      }
-
-      function ProjectCard({ title, badge, description, bullets, tech, link }) {
-        return (
-          <article className="project-card">
-            <div className="project-header">
-              <span className="project-badge">{badge}</span>
-              <h3 className="project-title">{title}</h3>
-            </div>
-            <p className="project-desc">{description}</p>
-            <ul className="project-list">
-              {bullets.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
-            <div className="project-meta">
-              <span className="project-tech">{tech}</span>
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link"
-                >
-                  View Code →
-                </a>
-              )}
-            </div>
-          </article>
-        );
-      }
-
-      function Projects() {
-        const projects = [
-          {
-            title: "ShelfEye – Retail Attention Intelligence",
-            badge: "Featured • Computer Vision + React",
-            description:
-              "Software‑only in‑store analytics: tracks where shoppers look and how long they look using a standard camera and head‑pose estimation.",
-            bullets: [
-              "Divides shelves into 9 zones (3 aisles × 3 heights) and classifies engagement as glance, browse, or dwell.",
-              "Python + OpenCV + MediaPipe pipeline writes live stats; Flask API feeds a React “Tesla‑style” dashboard.",
-              "Dashboard shows total people, active now, heatmap by shelf zone, and per‑aisle breakdown.",
-            ],
-            tech: "Python, OpenCV, MediaPipe, Flask, React, Chart.js",
-            link: "https://github.com/MannPatel8284/shelfeye",
-          },
-          {
-            title: "Motion Detection Security System",
-            badge: "Computer Vision",
-            description:
-              "Event‑based security camera that records only when motion is detected and triggers email alerts.",
-            bullets: [
-              "Real‑time motion detection and region‑of‑interest recording using OpenCV.",
-              "Automatically emails recorded clips when motion is detected.",
-            ],
-            tech: "Python, OpenCV, SMTP",
-            link: "https://github.com/MannPatel8284", // update with real repo
-          },
-          {
-            title: "Student Management System",
-            badge: "Desktop App",
-            description:
-              "GUI desktop tool to manage student records with full CRUD and persistent storage.",
-            bullets: [
-              "PyQt6 interface for adding, editing, deleting, and searching students.",
-              "SQLite database integration for reliable local storage.",
-            ],
-            tech: "Python, PyQt6, SQLite",
-            link: "https://github.com/MannPatel8284", // update with real repo
-          },
-        ];
-
-        return (
-          <section id="projects" className="section">
-            <h2 className="section-title">Projects</h2>
-            <p className="section-subtitle">
-              A sample of the things I’ve built and shipped.
-            </p>
-            <div className="projects-grid">
-              {projects.map((p) => (
-                <ProjectCard key={p.title} {...p} />
-              ))}
-            </div>
-          </section>
-        );
-      }
-
-      function Education() {
-        return (
-          <section id="education" className="section">
-            <h2 className="section-title">Education</h2>
-            <div className="edu-card">
-              <h3>B.Sc. Computer Science</h3>
-              <p>Expected Graduation: 2028</p>
-              <p className="edu-note">
-                Focused on algorithms, data structures, and building real
-                software projects outside the classroom.
-              </p>
-            </div>
-          </section>
-        );
-      }
-
-      function Contact() {
-        return (
-          <section id="contact" className="section">
-            <h2 className="section-title">Contact</h2>
-            <p className="section-subtitle">
-              Open to internships, junior roles, and interesting collaborations.
-            </p>
-            <div className="contact-card">
-              <p>
-                Email:{" "}
-                <a href="mailto:your.email@example.com">
-                  your.email@example.com
-                </a>
-              </p>
-              <p>
-                GitHub:{" "}
-                <a
-                  href="https://github.com/MannPatel8284"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  github.com/MannPatel8284
-                </a>
-              </p>
-              <p>
-                LinkedIn:{" "}
-                <a
-                  href="https://www.linkedin.com/in/your-profile"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  linkedin.com/in/your-profile
-                </a>
-              </p>
-            </div>
-          </section>
-        );
-      }
-
-      function App() {
-        return (
-          <>
-            <header className="nav">
-              <div className="nav-left">MANN PATEL</div>
-              <nav className="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-              </nav>
-            </header>
-            <main>
-              <Hero />
-              <Projects />
-              <Skills />
-              <Education />
-              <Contact />
-            </main>
-            <footer className="footer">
-              © {new Date().getFullYear()} Mann Patel — Built with React
-            </footer>
-          </>
-        );
-      }
-
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<App />);
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mann Patel | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    :root {
+      --bg: #fafbfc;
+      --card: #ffffff;
+      --text: #1a1d23;
+      --muted: #5c6370;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .app { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .nav {
+      padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; color: var(--text); }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+    .hero {
+      padding: 56px 0 48px;
+      text-align: center;
+    }
+    .hero-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+    .hero-title span { color: var(--accent); }
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary, .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.35); }
+    .btn-ghost {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-resume {
+      background: #0f172a;
+      color: #fff;
+      border: none;
+    }
+    .btn-resume:hover { background: #1e293b; transform: translateY(-1px); }
+    .section { padding: 40px 0 0; }
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .section-subtitle { font-size: 15px; color: var(--muted); margin: 0 0 24px; }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .projects-grid { display: flex; flex-direction: column; gap: 20px; }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); border-color: #c7d2fe; }
+    .project-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .project-title { font-size: 18px; font-weight: 600; margin: 0 0 8px; color: var(--text); }
+    .project-desc { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+    .project-list { margin: 0 0 16px 20px; padding: 0; font-size: 14px; color: var(--muted); }
+    .project-list li { margin-bottom: 4px; }
+    .project-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .project-tech { font-size: 12px; color: var(--muted); }
+    .project-link { font-size: 13px; font-weight: 600; color: var(--accent); }
+    .project-link:hover { text-decoration: underline; }
+    .edu-card, .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .edu-card h3, .contact-card h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; }
+    .contact-card p { margin: 0 0 8px; font-size: 15px; }
+    .contact-card a { color: var(--accent); font-weight: 500; }
+    .contact-card a:hover { text-decoration: underline; }
+    .resume-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 12px 20px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+    .resume-download:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.35); }
+    .footer { padding: 32px 0 24px; text-align: center; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 32px; }
+      .nav-links { gap: 16px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+
+    function Hero() {
+      return (
+        <section className="hero">
+          <p className="hero-pill">AI · ML · Fullstack</p>
+          <h1 className="hero-title">Hi, I'm <span>Mann Patel</span></h1>
+          <p className="hero-subtitle">
+           I build software that solves problems that actually exist. My current project ShelfEye uses computer vision and machine learning to track where shoppers look in retail stores through their existing cameras — no expensive hardware, no privacy violations, just intelligence. Strong in Python, ML, computer vision, and full-stack development across Flask, React, and AWS. Currently a Computer Science student who prefers shipping real products over writing academic reports.
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="btn-primary">View Projects</a>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-resume btn-primary">Resume</a>
+            <a href="https://github.com/MannPatel8284" target="_blank" rel="noreferrer" className="btn-ghost">GitHub</a>
+          </div>
+        </section>
+      );
+    }
+
+    function Skills() {
+      const skills = [
+        'Python', 'C++', 'Java', 'Machine Learning', 'OpenCV', 'MediaPipe',
+        'Flask', 'React', 'PyQt6', 'SQL / MySQL', 'SQLite', 'Data Structures',
+        'OOP', 'Git & GitHub'
+      ];
+      return (
+        <section id="skills" className="section">
+          <h2 className="section-title">Skills</h2>
+          <p className="section-subtitle">Technologies and tools I work with.</p>
+          <div className="skills-grid">
+            {skills.map(s => <div key={s} className="skill-pill">{s}</div>)}
+          </div>
+        </section>
+      );
+    }
+
+    function ProjectCard({ title, badge, description, bullets, tech, link }) {
+      return (
+        <article className="project-card">
+          <span className="project-badge">{badge}</span>
+          <h3 className="project-title">{title}</h3>
+          <p className="project-desc">{description}</p>
+          <ul className="project-list">
+            {bullets.map(b => <li key={b}>{b}</li>)}
+          </ul>
+          <div className="project-meta">
+            <span className="project-tech">{tech}</span>
+            {link && <a href={link} target="_blank" rel="noreferrer" className="project-link">View code →</a>}
+          </div>
+        </article>
+      );
+    }
+
+    function Projects() {
+      const projects = [
+        {
+          title: 'ShelfEye — Retail Attention Intelligence',
+          badge: 'Featured · Computer Vision + React',
+          description: 'Software-only in-store analytics: tracks where shoppers look and how long they look using a camera and head-pose estimation. No new hardware — stores use existing cameras.',
+          bullets: [
+            '9 shelf zones (3 aisles × 3 heights); classifies engagement as glance, browse, or dwell.',
+            'Python + OpenCV + MediaPipe pipeline; Flask API; React dashboard with heatmap and live stats.',
+          ],
+          tech: 'Python, OpenCV, MediaPipe, Flask, React, Chart.js',
+          link: 'https://github.com/MannPatel8284/shelfeye',
+        },
+        {
+          title: 'Motion Detection Security System',
+          badge: 'Computer Vision',
+          description: 'Event-based security camera with recording and email alerts on motion.',
+          bullets: [
+            'Real-time motion detection and region-based recording using OpenCV.',
+            'Email alerts with recorded video clips.',
+          ],
+          tech: 'Python, OpenCV, SMTP',
+          link: null,
+        },
+        {
+          title: 'Student Management System',
+          badge: 'Desktop App',
+          description: 'GUI desktop app for student records with full CRUD and persistent storage.',
+          bullets: [
+            'PyQt6 interface; SQLite database.',
+          ],
+          tech: 'Python, PyQt6, SQLite',
+          link: null,
+        },
+      ];
+      return (
+        <section id="projects" className="section">
+          <h2 className="section-title">Projects</h2>
+          <p className="section-subtitle">Things I've built and shipped.</p>
+          <div className="projects-grid">
+            {projects.map(p => <ProjectCard key={p.title} {...p} />)}
+          </div>
+        </section>
+      );
+    }
+
+    function Education() {
+      return (
+        <section id="education" className="section">
+          <h2 className="section-title">Education</h2>
+          <div className="edu-card">
+            <h3>B.Sc. Computer Science</h3>
+            <p>Expected graduation: 2028</p>
+          </div>
+        </section>
+      );
+    }
+
+    function Contact() {
+      return (
+        <section id="contact" className="section">
+          <h2 className="section-title">Contact</h2>
+          <p className="section-subtitle">Open to internships and opportunities.</p>
+          <div className="contact-card">
+            <p><strong>Email</strong> · <a href="mailto:patelmann274@gmail.com">patelmann274@gmail.com</a></p>
+            <p><strong>GitHub</strong> · <a href="https://github.com/MannPatel8284" target="_blank" rel="noreferrer">github.com/MannPatel8284</a></p>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-download">📄 Download my resume (PDF)</a>
+          </div>
+        </section>
+      );
+    }
+
+    function App() {
+      return (
+        <div className="app">
+          <header className="nav">
+            <span className="nav-brand">Mann Patel</span>
+            <nav className="nav-links">
+              <a href="#projects">Projects</a>
+              <a href="#skills">Skills</a>
+              <a href="#education">Education</a>
+              <a href="#contact">Contact</a>
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </nav>
+          </header>
+          <main>
+            <Hero />
+            <Projects />
+            <Skills />
+            <Education />
+            <Contact />
+          </main>
+          <footer className="footer">
+            © {new Date().getFullYear()} Mann Patel 
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
 </html>
