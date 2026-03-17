@@ -156,7 +156,6 @@ nav{
   position:relative;overflow:hidden;
 }
 
-/* Ambient indigo orb */
 .hero-orb{
   position:absolute;top:-100px;right:-150px;
   width:600px;height:600px;
@@ -175,7 +174,6 @@ nav{
 
 .hero-inner{position:relative;z-index:1;}
 
-/* System status bar */
 .status-bar{
   display:flex;align-items:center;gap:20px;
   font-family:var(--mono);font-size:11px;color:var(--text-3);
@@ -190,7 +188,6 @@ nav{
 @keyframes pulse-green{0%,100%{opacity:1;}50%{opacity:0.4;}}
 .status-sep{color:var(--text-4);}
 
-/* Main headline */
 .hero-eyebrow{
   font-family:var(--mono);font-size:12px;
   color:var(--indigo-bright);letter-spacing:0.14em;
@@ -225,7 +222,6 @@ nav{
   background-clip:text;
   animation:slide-in 0.9s 0.24s cubic-bezier(0.22,1,0.36,1) both;
 }
-/* Bracket chars */
 .hero-headline .br{
   -webkit-text-fill-color:var(--indigo);
   color:var(--indigo);opacity:0.5;
@@ -271,7 +267,6 @@ nav{
 }
 .btn-ghost:hover{border-color:var(--border-bright);color:var(--indigo-bright);background:var(--indigo-soft);}
 
-/* Hero metrics row */
 .hero-metrics{
   display:grid;grid-template-columns:repeat(4,1fr);
   gap:1px;background:var(--border);
@@ -322,7 +317,7 @@ section{padding:90px 0;}
 }
 
 /* ══════════════════════════════════════════
-   PROJECT GRID  (#work)
+   PROJECT GRID
 ══════════════════════════════════════════ */
 #work{background:var(--bg-1);}
 
@@ -353,7 +348,6 @@ section{padding:90px 0;}
 .p-card:hover{background:var(--bg-2);}
 .p-card:hover::before{transform:scaleX(1);}
 
-/* Glow corner */
 .p-card::after{
   content:'';
   position:absolute;top:-60px;right:-60px;
@@ -422,7 +416,7 @@ section{padding:90px 0;}
 .p-link-primary:hover{background:var(--indigo-mid);}
 
 /* ══════════════════════════════════════════
-   TECHNICAL STACK  (#technical-stack)
+   TECHNICAL STACK
 ══════════════════════════════════════════ */
 #technical-stack{background:var(--bg);}
 
@@ -456,7 +450,6 @@ section{padding:90px 0;}
 .stack-item:hover{border-color:var(--border-bright);color:var(--indigo-bright);background:var(--indigo-soft);}
 .stack-item-dot{width:5px;height:5px;border-radius:50%;background:var(--indigo);flex-shrink:0;}
 
-/* proficiency bar */
 .stack-bar-item{
   display:flex;align-items:center;gap:12px;
   margin-bottom:12px;
@@ -477,86 +470,9 @@ section{padding:90px 0;}
 .stack-bar-pct{font-family:var(--mono);font-size:10px;color:var(--indigo);width:32px;text-align:right;}
 
 /* ══════════════════════════════════════════
-   RESEARCH & NOTEBOOKS  (#blog)
-══════════════════════════════════════════ */
-#blog{background:var(--bg-1);}
-
-.research-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:var(--radius);
-  overflow:hidden;
-}
-
-.r-card{
-  background:var(--bg-1);padding:30px 28px;
-  position:relative;overflow:hidden;
-  display:flex;flex-direction:column;gap:14px;
-  transition:background 0.25s;
-}
-.r-card:hover{background:var(--bg-2);}
-
-.r-card-accent{
-  position:absolute;bottom:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,var(--indigo),transparent);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform 0.35s cubic-bezier(0.22,1,0.36,1);
-}
-.r-card:hover .r-card-accent{transform:scaleX(1);}
-
-.r-type-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.r-type{
-  font-family:var(--mono);font-size:10px;
-  letter-spacing:0.1em;text-transform:uppercase;
-  padding:3px 10px;border-radius:3px;
-}
-.r-type.notebook{background:rgba(245,158,11,0.12);color:var(--amber);border:1px solid rgba(245,158,11,0.2);}
-.r-type.writeup{background:var(--indigo-soft);color:var(--indigo-bright);border:1px solid rgba(99,102,241,0.2);}
-.r-type.paper{background:var(--green-soft);color:var(--green);border:1px solid rgba(16,185,129,0.2);}
-
-.r-platform{
-  font-family:var(--mono);font-size:10px;color:var(--text-4);
-  letter-spacing:0.06em;
-}
-
-.r-title{
-  font-family:var(--display);font-size:19px;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.3px;
-  color:var(--text);line-height:1.2;
-}
-
-.r-abstract{
-  font-size:13px;font-weight:300;color:var(--text-2);
-  line-height:1.65;
-}
-
-.r-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.r-tag{
-  padding:3px 9px;border-radius:3px;
-  background:var(--bg-3);border:1px solid var(--border);
-  font-family:var(--mono);font-size:10px;color:var(--text-3);
-}
-
-.r-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:14px;border-top:1px solid var(--border);
-  flex-wrap:wrap;gap:8px;
-}
-.r-date{font-family:var(--mono);font-size:10px;color:var(--text-4);}
-.r-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--mono);font-size:11px;color:var(--indigo-bright);
-  text-decoration:none;letter-spacing:0.04em;
-  transition:color 0.2s;
-}
-.r-link:hover{color:#a5b4fc;}
-.r-link svg{transition:transform 0.2s;}
-.r-link:hover svg{transform:translate(2px,-2px);}
-
-/* ══════════════════════════════════════════
    TERMINAL CTA
 ══════════════════════════════════════════ */
-#resume-cta{background:var(--bg);padding:80px 0;}
+#resume-cta{background:var(--bg-1);padding:80px 0;}
 
 .terminal-card{
   background:var(--bg-1);
@@ -633,7 +549,6 @@ footer{
   .hero-metrics{grid-template-columns:repeat(2,1fr);}
   section{padding:60px 0;}
   .project-grid{grid-template-columns:1fr;}
-  .research-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -648,19 +563,17 @@ footer{
   <span class="mobile-close" id="navClose" onclick="closeMobile()">[ close ]</span>
   <a href="#work" onclick="closeMobile()">Work</a>
   <a href="#technical-stack" onclick="closeMobile()">Technical Stack</a>
-  <a href="#blog" onclick="closeMobile()">Blog</a>
-  <a href="Mann Patel Resume.pdf" target="_blank" onclick="closeMobile()">Resume</a>
+  <a href="Mann_Patel_Resume.pdf" target="_blank" onclick="closeMobile()">Resume</a>
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">mann<em>@</em>patel<em> ~ $</em></div>
+    <div class="nav-logo">Mann<em>@</em>Patel<em> ~ $</em></div>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#technical-stack">Technical Stack</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="Mann Patel Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      <li><a href="Mann_Patel_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="openMobile()">
       <span></span><span></span><span></span>
@@ -708,9 +621,7 @@ footer{
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           GITHUB
         </a>
-        <a href="/cdn-cgi/l/email-protection#a8d8c9dccdc4c5c9c6c69a9f9ce8cfc5c9c1c486cbc7c5" class="btn-ghost">
-          CONTACT
-        </a>
+
       </div>
 
       <div class="hero-metrics">
@@ -938,297 +849,6 @@ footer{
   </div>
 </section>
 
-<!-- ══ CONTACT (Blog nav link → contact) ══ -->
-<section id="blog">
-  <div class="wrap">
-    <div class="s-kicker">// get_in_touch</div>
-    <h2 class="s-title">Contact</h2>
-    <p class="s-sub">Open to internships, collabs, and interesting problems. Message goes straight to my inbox.</p>
-
-    <div class="contact-layout reveal">
-
-      <!-- LEFT — info panel -->
-      <div class="contact-info">
-
-        <div class="contact-info-block">
-          <div class="ci-label">// direct_line</div>
-          <div class="ci-value">
-            <a href="mailto:patelmann274@gmail.com" class="ci-link" id="emailLink">patelmann274@gmail.com</a>
-            <button class="ci-copy" id="copyEmail" title="Copy email">
-              <svg id="copyIcon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            </button>
-            <span class="ci-copied" id="copiedBadge">COPIED</span>
-          </div>
-        </div>
-
-        <div class="contact-info-block">
-          <div class="ci-label">// github</div>
-          <div class="ci-value">
-            <a href="https://github.com/MannPatel8284" target="_blank" class="ci-link">github.com/MannPatel8284</a>
-          </div>
-        </div>
-
-        <div class="contact-info-block">
-          <div class="ci-label">// status</div>
-          <div class="ci-value">
-            <span class="ci-status-dot"></span>
-            <span class="ci-status-text">Open to internships · Summer 2025</span>
-          </div>
-        </div>
-
-        <div class="contact-info-block">
-          <div class="ci-label">// response_time</div>
-          <div class="ci-value ci-value-text">Usually within 24 hours</div>
-        </div>
-
-        <!-- Quick links -->
-        <div class="contact-quick">
-          <div class="ci-label" style="margin-bottom:14px;">// quick_links</div>
-          <div class="contact-quick-btns">
-            <a href="Mann Patel Resume.pdf" target="_blank" class="cq-btn">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              RESUME.PDF
-            </a>
-            <a href="https://github.com/MannPatel8284" target="_blank" class="cq-btn">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GITHUB
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT — form -->
-      <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm" novalidate>
-
-          <div class="cf-row">
-            <div class="cf-group" id="grp-name">
-              <label class="cf-label" for="cf-name">YOUR NAME <span class="cf-req">*</span></label>
-              <input class="cf-input" id="cf-name" type="text" placeholder="e.g. Jane Smith" autocomplete="off"/>
-              <div class="cf-err" id="err-name">Name is required.</div>
-            </div>
-            <div class="cf-group" id="grp-email">
-              <label class="cf-label" for="cf-email">YOUR EMAIL <span class="cf-req">*</span></label>
-              <input class="cf-input" id="cf-email" type="email" placeholder="you@example.com" autocomplete="off"/>
-              <div class="cf-err" id="err-email">Enter a valid email.</div>
-            </div>
-          </div>
-
-          <div class="cf-group" id="grp-subject">
-            <label class="cf-label">SUBJECT <span class="cf-req">*</span></label>
-            <div class="cf-chips">
-              <button type="button" class="cf-chip active" data-val="Internship Opportunity">Internship Opportunity</button>
-              <button type="button" class="cf-chip" data-val="Project Collaboration">Project Collaboration</button>
-              <button type="button" class="cf-chip" data-val="General Inquiry">General Inquiry</button>
-              <button type="button" class="cf-chip" data-val="Other">Other</button>
-            </div>
-            <input type="hidden" id="cf-subject" value="Internship Opportunity"/>
-          </div>
-
-          <div class="cf-group" id="grp-msg">
-            <label class="cf-label" for="cf-msg">MESSAGE <span class="cf-req">*</span></label>
-            <textarea class="cf-input cf-textarea" id="cf-msg" placeholder="Tell me about the opportunity, project, or question..." maxlength="1000"></textarea>
-            <div class="cf-meta">
-              <div class="cf-err" id="err-msg">Message must be at least 20 characters.</div>
-              <span class="cf-counter"><span id="charCount">0</span> / 1000</span>
-            </div>
-          </div>
-
-          <div class="cf-footer">
-            <button type="submit" class="cf-submit" id="cfSubmit">
-              <span id="cfBtnText">SEND MESSAGE</span>
-              <span id="cfBtnIcon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </span>
-            </button>
-            <div class="cf-note">Sends directly to patelmann274@gmail.com</div>
-          </div>
-
-        </form>
-
-        <!-- Success state -->
-        <div class="cf-success" id="cfSuccess">
-          <div class="cf-success-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="cf-success-title">MESSAGE SENT</div>
-          <div class="cf-success-sub">Your mail client should open. If not, email me directly at<br/><a href="mailto:patelmann274@gmail.com">patelmann274@gmail.com</a></div>
-          <button class="cf-reset" id="cfReset">SEND ANOTHER</button>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<style>
-/* ── CONTACT LAYOUT ── */
-.contact-layout{
-  display:grid;grid-template-columns:320px 1fr;
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:var(--radius);
-  overflow:hidden;
-}
-.contact-info{
-  background:var(--bg-1);padding:36px 32px;
-  display:flex;flex-direction:column;gap:28px;
-}
-.contact-info-block{}
-.ci-label{
-  font-family:var(--mono);font-size:10px;
-  color:var(--indigo);letter-spacing:0.1em;
-  text-transform:uppercase;margin-bottom:8px;
-}
-.ci-value{display:flex;align-items:center;gap:10px;}
-.ci-value-text{font-size:13px;color:var(--text-2);font-weight:300;}
-.ci-link{
-  font-family:var(--mono);font-size:12px;
-  color:var(--text-2);text-decoration:none;
-  transition:color 0.2s;
-}
-.ci-link:hover{color:var(--indigo-bright);}
-.ci-copy{
-  background:none;border:1px solid var(--border);border-radius:4px;
-  padding:4px 7px;cursor:none;color:var(--text-3);
-  display:flex;align-items:center;transition:all 0.2s;flex-shrink:0;
-}
-.ci-copy:hover{border-color:var(--border-bright);color:var(--indigo-bright);background:var(--indigo-soft);}
-.ci-copied{
-  font-family:var(--mono);font-size:9px;letter-spacing:0.08em;
-  color:var(--green);background:var(--green-soft);
-  border:1px solid rgba(16,185,129,0.2);
-  padding:3px 8px;border-radius:3px;
-  opacity:0;transition:opacity 0.2s;pointer-events:none;
-}
-.ci-copied.show{opacity:1;}
-.ci-status-dot{
-  width:7px;height:7px;border-radius:50%;flex-shrink:0;
-  background:var(--green);box-shadow:0 0 8px var(--green);
-  animation:pulse-green 2.5s ease-in-out infinite;
-}
-.ci-status-text{font-family:var(--mono);font-size:11px;color:var(--text-2);}
-
-.contact-quick-btns{display:flex;flex-direction:column;gap:8px;}
-.cq-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 16px;background:var(--bg-2);
-  border:1px solid var(--border);border-radius:5px;
-  font-family:var(--mono);font-size:11px;letter-spacing:0.06em;
-  color:var(--text-3);text-decoration:none;
-  transition:all 0.2s;
-}
-.cq-btn:hover{border-color:var(--border-bright);color:var(--indigo-bright);background:var(--indigo-soft);}
-
-/* ── FORM ── */
-.contact-form-wrap{background:var(--bg-1);padding:36px 36px;position:relative;}
-.contact-form{display:flex;flex-direction:column;gap:22px;}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.cf-group{display:flex;flex-direction:column;gap:7px;position:relative;}
-.cf-label{
-  font-family:var(--mono);font-size:10px;
-  color:var(--text-3);letter-spacing:0.1em;
-}
-.cf-req{color:var(--indigo);}
-.cf-input{
-  background:var(--bg-2);border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  padding:12px 14px;font-family:var(--body);font-size:14px;
-  color:var(--text);outline:none;
-  transition:border-color 0.2s,box-shadow 0.2s;
-  width:100%;
-}
-.cf-input::placeholder{color:var(--text-4);}
-.cf-input:focus{
-  border-color:var(--border-bright);
-  box-shadow:0 0 0 3px rgba(99,102,241,0.1);
-}
-.cf-input.error{border-color:rgba(239,68,68,0.5);}
-.cf-textarea{min-height:130px;resize:vertical;font-family:var(--body);line-height:1.6;}
-
-.cf-chips{display:flex;flex-wrap:wrap;gap:8px;}
-.cf-chip{
-  padding:7px 14px;border-radius:999px;
-  background:var(--bg-2);border:1px solid var(--border);
-  font-family:var(--mono);font-size:11px;letter-spacing:0.04em;
-  color:var(--text-3);cursor:none;
-  transition:all 0.2s;
-}
-.cf-chip:hover{border-color:var(--border-bright);color:var(--indigo-bright);}
-.cf-chip.active{background:var(--indigo-soft);border-color:var(--border-bright);color:var(--indigo-bright);}
-
-.cf-err{
-  font-family:var(--mono);font-size:10px;
-  color:rgba(239,68,68,0.8);letter-spacing:0.05em;
-  display:none;
-}
-.cf-group.has-error .cf-err{display:block;}
-.cf-group.has-error .cf-input{border-color:rgba(239,68,68,0.4);}
-
-.cf-meta{display:flex;justify-content:space-between;align-items:flex-start;}
-.cf-counter{
-  font-family:var(--mono);font-size:10px;
-  color:var(--text-4);flex-shrink:0;margin-left:auto;
-}
-.cf-counter.warn{color:var(--amber);}
-
-.cf-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-.cf-submit{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:13px 28px;background:var(--indigo);
-  color:#fff;border:none;border-radius:var(--radius-sm);
-  font-family:var(--mono);font-size:12px;letter-spacing:0.07em;
-  cursor:none;transition:all 0.25s;
-  box-shadow:0 0 28px var(--indigo-glow);
-}
-.cf-submit:hover{background:var(--indigo-bright);transform:translateY(-2px);box-shadow:0 0 44px var(--indigo-glow);}
-.cf-submit:active{transform:translateY(0);}
-.cf-submit.sending{opacity:0.7;pointer-events:none;}
-.cf-note{font-family:var(--mono);font-size:10px;color:var(--text-4);letter-spacing:0.04em;}
-
-/* Success */
-.cf-success{
-  display:none;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;gap:16px;
-  position:absolute;inset:0;background:var(--bg-1);border-radius:var(--radius);
-  padding:40px;
-}
-.cf-success.visible{display:flex;}
-.cf-success-icon{
-  width:64px;height:64px;border-radius:50%;
-  background:var(--green-soft);border:1px solid rgba(16,185,129,0.3);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--green);
-  animation:scale-in 0.4s cubic-bezier(0.22,1,0.36,1);
-}
-@keyframes scale-in{from{transform:scale(0);}to{transform:scale(1);}}
-.cf-success-title{
-  font-family:var(--display);font-size:28px;font-weight:900;
-  text-transform:uppercase;letter-spacing:2px;
-  color:var(--text);
-}
-.cf-success-sub{font-size:13px;color:var(--text-2);font-weight:300;line-height:1.7;}
-.cf-success-sub a{color:var(--indigo-bright);}
-.cf-reset{
-  margin-top:8px;padding:10px 22px;
-  background:transparent;border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  font-family:var(--mono);font-size:11px;letter-spacing:0.07em;
-  color:var(--text-3);cursor:none;transition:all 0.2s;
-}
-.cf-reset:hover{border-color:var(--border-bright);color:var(--indigo-bright);}
-
-@media(max-width:900px){
-  .contact-layout{grid-template-columns:1fr;}
-  .cf-row{grid-template-columns:1fr;}
-}
-@media(max-width:640px){
-  .contact-form-wrap{padding:24px 20px;}
-  .contact-info{padding:28px 22px;}
-}
-</style>
-
 <!-- ══ TERMINAL CTA / RESUME ══ -->
 <section id="resume-cta">
   <div class="wrap">
@@ -1241,9 +861,9 @@ footer{
         <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cmd">cat about.txt</span></div>
         <div class="t-line"><span class="t-output">Name        : Mann Patel</span></div>
         <div class="t-line"><span class="t-output">Role        : AI/ML + Full-Stack Engineer</span></div>
-        <div class="t-line"><span class="t-output">Status      : B.Sc Computer Science · Grad 2028</span></div>
+        <div class="t-line"><span class="t-output">Status      : B.Sc Computer Science With AI · Grad 2028</span></div>
         <div class="t-line"><span class="t-output">Focus       : Computer Vision · Real-Time ML Systems</span></div>
-        <div class="t-line"><span class="t-output">Email       : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e898899c8d8485898686dadfdca88f85898184c68b8785">[email&#160;protected]</a></span></div>
+        <div class="t-line"><span class="t-output">Email       : patelmann274@gmail.com</span></div>
         <div class="t-line"><span class="t-output">GitHub      : github.com/MannPatel8284</span></div>
         <div class="t-line">&nbsp;</div>
         <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cmd">./get-resume.sh</span></div>
@@ -1251,12 +871,12 @@ footer{
         <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cursor-block"></span></div>
       </div>
       <div class="terminal-actions">
-        <a href="Mann Patel Resume.pdf" target="_blank" class="btn-indigo">
+        <a href="Mann_Patel_Resume.pdf" target="_blank" class="btn-indigo">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           DOWNLOAD RESUME
         </a>
-        <a href="/cdn-cgi/l/email-protection#dbabbaafbeb7b6bab5b5e9ecef9bbcb6bab2b7f5b8b4b6" class="btn-ghost">
-          SEND EMAIL
+        <a href="https://mail.google.com/mail/?view=cm&to=patelmann274@gmail.com&su=Reaching+Out+from+Portfolio" target="_blank" class="btn-ghost">
+          EMAIL ME
         </a>
         <a href="https://github.com/MannPatel8284" target="_blank" class="btn-ghost">
           GITHUB PROFILE
@@ -1278,161 +898,63 @@ footer{
 
 <script>
 /* ── CUSTOM CURSOR ── */
-const cursor=document.getElementById('cursor');
-const ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
-(function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
-document.querySelectorAll('a,button,.p-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.width='18px';cursor.style.height='18px';ring.style.width='50px';ring.style.height='50px';});
-  el.addEventListener('mouseleave',()=>{cursor.style.width='10px';cursor.style.height='10px';ring.style.width='34px';ring.style.height='34px';});
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+(function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button,.p-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '18px'; cursor.style.height = '18px';
+    ring.style.width = '50px'; ring.style.height = '50px';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '10px'; cursor.style.height = '10px';
+    ring.style.width = '34px'; ring.style.height = '34px';
+  });
 });
 
 /* ── MOBILE NAV ── */
-function openMobile(){document.getElementById('mobileNav').classList.add('open');}
-function closeMobile(){document.getElementById('mobileNav').classList.remove('open');}
-document.getElementById('navClose').addEventListener('click',closeMobile);
+function openMobile() { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobile() { document.getElementById('mobileNav').classList.remove('open'); }
+document.getElementById('navClose').addEventListener('click', closeMobile);
 
 /* ── SCROLL REVEAL ── */
-const revealObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}});
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 /* ── PROFICIENCY BARS ── */
-const barObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.stack-bar-fill').forEach(b=>{
-        const w=b.style.width;b.style.width='0';
-        requestAnimationFrame(()=>requestAnimationFrame(()=>{b.style.transition='width 1.4s cubic-bezier(0.22,1,0.36,1)';b.style.width=w;}));
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stack-bar-fill').forEach(b => {
+        const w = b.style.width; b.style.width = '0';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          b.style.transition = 'width 1.4s cubic-bezier(0.22,1,0.36,1)';
+          b.style.width = w;
+        }));
       });
       barObs.unobserve(e.target);
     }
   });
-},{threshold:0.3});
-document.querySelectorAll('.stack-bar-item').forEach(el=>{const p=el.closest('div');if(p)barObs.observe(p);});
-
-/* ════════════════════════════════
-   CONTACT FORM — FULL LOGIC
-════════════════════════════════ */
-
-/* Subject chips */
-document.querySelectorAll('.cf-chip').forEach(chip=>{
-  chip.addEventListener('click',()=>{
-    document.querySelectorAll('.cf-chip').forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active');
-    document.getElementById('cf-subject').value=chip.dataset.val;
-  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stack-bar-item').forEach(el => {
+  const p = el.closest('div'); if (p) barObs.observe(p);
 });
-
-/* Character counter */
-const msgEl=document.getElementById('cf-msg');
-const charCount=document.getElementById('charCount');
-msgEl.addEventListener('input',()=>{
-  const len=msgEl.value.length;
-  charCount.textContent=len;
-  charCount.parentElement.className='cf-counter'+(len>800?' warn':'');
-});
-
-/* Copy email */
-document.getElementById('copyEmail').addEventListener('click',()=>{
-  navigator.clipboard.writeText('patelmann274@gmail.com').then(()=>{
-    const badge=document.getElementById('copiedBadge');
-    badge.classList.add('show');
-    setTimeout(()=>badge.classList.remove('show'),2000);
-  });
-});
-
-/* Validation helpers */
-function setError(grpId,show){
-  const g=document.getElementById(grpId);
-  if(show) g.classList.add('has-error');
-  else g.classList.remove('has-error');
-}
-
-function validateName(){
-  const v=document.getElementById('cf-name').value.trim();
-  const ok=v.length>=2;
-  setError('grp-name',!ok);
-  return ok;
-}
-function validateEmail(){
-  const v=document.getElementById('cf-email').value.trim();
-  const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  setError('grp-email',!ok);
-  return ok;
-}
-function validateMsg(){
-  const v=msgEl.value.trim();
-  const ok=v.length>=20;
-  setError('grp-msg',!ok);
-  return ok;
-}
-
-/* Live validation on blur */
-document.getElementById('cf-name').addEventListener('blur',validateName);
-document.getElementById('cf-email').addEventListener('blur',validateEmail);
-msgEl.addEventListener('blur',validateMsg);
-
-/* Clear error on type */
-['cf-name','cf-email','cf-msg'].forEach(id=>{
-  document.getElementById(id).addEventListener('input',()=>{
-    const grpMap={'cf-name':'grp-name','cf-email':'grp-email','cf-msg':'grp-msg'};
-    document.getElementById(grpMap[id]).classList.remove('has-error');
-  });
-});
-
-/* Form submit */
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  const okName=validateName();
-  const okEmail=validateEmail();
-  const okMsg=validateMsg();
-  if(!okName||!okEmail||!okMsg) return;
-
-  const name=document.getElementById('cf-name').value.trim();
-  const email=document.getElementById('cf-email').value.trim();
-  const subject=document.getElementById('cf-subject').value;
-  const msg=msgEl.value.trim();
-
-  /* Build mailto string */
-  const body=`Hi Mann,\n\nMy name is ${name} (${email}).\n\n${msg}\n\nBest,\n${name}`;
-  const mailtoURL=`mailto:patelmann274@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  /* Button loading state */
-  const btn=document.getElementById('cfSubmit');
-  const btnText=document.getElementById('cfBtnText');
-  btn.classList.add('sending');
-  btnText.textContent='OPENING MAIL CLIENT...';
-
-  /* Small delay for UX feel, then open mailto + show success */
-  setTimeout(()=>{
-    window.location.href=mailtoURL;
-    setTimeout(()=>{
-      document.getElementById('contactForm').style.display='none';
-      document.getElementById('cfSuccess').classList.add('visible');
-      btn.classList.remove('sending');
-      btnText.textContent='SEND MESSAGE';
-    },600);
-  },700);
-});
-
-/* Reset form */
-document.getElementById('cfReset').addEventListener('click',()=>{
-  document.getElementById('cf-name').value='';
-  document.getElementById('cf-email').value='';
-  msgEl.value='';
-  charCount.textContent='0';
-  document.querySelectorAll('.cf-chip').forEach(c=>c.classList.remove('active'));
-  document.querySelector('.cf-chip[data-val="Internship Opportunity"]').classList.add('active');
-  document.getElementById('cf-subject').value='Internship Opportunity';
-  document.querySelectorAll('.cf-group').forEach(g=>g.classList.remove('has-error'));
-  document.getElementById('cfSuccess').classList.remove('visible');
-  document.getElementById('contactForm').style.display='flex';
-});
-
-/* ── Nav Blog link → contact ── */
-/* Nav already points to #blog which is the contact section — no change needed */</script>
+</script>
 </body>
 </html>
