@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<title>Mann Patel — AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-close" id="navClose">[ close ]</span>
+  <a href="#work" class="mobile-nav-link">Work</a>
+  <a href="#technical-stack" class="mobile-nav-link">Stack</a>
+  <a href="#blog" class="mobile-nav-link">Contact</a>
+  <a href="Mann_Patel_Resume.pdf" target="_blank" class="mobile-nav-link">Resume</a>
+  <div class="mobile-theme-row">
+    <span class="mobile-theme-label">Theme</span>
+    <div class="toggle-pill" id="mobilePill">
+      <div class="toggle-pill-knob">🌙</div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">mann<em>@</em>patel<em> ~ $</em></div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#technical-stack">Technical Stack</a></li>
+      <li><a href="Mann_Patel_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-orb-2"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="status-bar">
+        <div class="status-item"><div class="status-dot on"></div>SYSTEM ONLINE</div>
+        <div class="status-sep">//</div>
+        <div class="status-item"><div class="status-dot dim"></div>CS STUDENT · B.Sc COMP SCI · GRAD 2028</div>
+        <div class="status-sep">//</div>
+        <div class="status-item"><div class="status-dot dim"></div>OPEN TO INTERNSHIPS</div>
+      </div>
+      <div class="hero-eyebrow">AI / ML ENGINEER</div>
+      <h1 class="hero-headline">
+        <span class="line-1">Cameras See.</span>
+        <span class="line-2">My Code</span>
+        <span class="line-focus"><span class="br">_</span>Understands<span class="br">.</span></span>
+      </h1>
+      <p class="hero-body">
+        I build <strong>software-only AI systems</strong> that ship to production —
+        from head-pose estimation pipelines that replace <strong>$40k hardware</strong>
+        to event-driven security cameras with sub-second alerting.
+        Strong in Python, OpenCV, MediaPipe, Flask, React and AWS.
+        Prefer deploying real products over writing academic reports.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-indigo">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          VIEW WORK
+        </a>
+        <a href="https://github.com/MannPatel8284" target="_blank" class="btn-ghost">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GITHUB
+        </a>
+
+      </div>
+      <div class="hero-metrics">
+        <div class="h-metric">
+          <span class="h-metric-val">94%</span>
+          <div class="h-metric-label">Zone Classification Accuracy</div>
+        </div>
+        <div class="h-metric">
+          <span class="h-metric-val">0.91</span>
+          <div class="h-metric-label">F1 Score (ShelfEye)</div>
+        </div>
+        <div class="h-metric">
+          <span class="h-metric-val">&lt;40ms</span>
+          <div class="h-metric-label">Inference Latency</div>
+        </div>
+        <div class="h-metric">
+          <span class="h-metric-val">97%</span>
+          <div class="h-metric-label">Motion Detection Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="s-kicker">// projects</div>
+    <h2 class="s-title">Work</h2>
+    <p class="s-sub">Production-grade systems built from first principles.</p>
+    <div class="project-grid">
+      <article class="p-card reveal">
+        <div class="p-card-top">
+          <span class="p-index">001</span>
+          <span class="p-metric green">94% ACCURACY</span>
+        </div>
+        <h3 class="p-name">ShelfEye</h3>
+        <p class="p-desc">
+          Retail attention intelligence — tracks where shoppers look using head-pose estimation through existing CCTV cameras. 9-zone heatmap dashboard, live dwell-time analytics. No hardware. No privacy violations.
+        </p>
+        <div class="p-stack">
+          <span class="p-pill">OpenCV</span>
+          <span class="p-pill">MediaPipe</span>
+          <span class="p-pill">Flask</span>
+          <span class="p-pill">React</span>
+          <span class="p-pill">Chart.js</span>
+          <span class="p-pill">Python</span>
+        </div>
+        <div class="p-links">
+          <a href="https://github.com/MannPatel8284/shelfeye" target="_blank" class="p-link p-link-primary">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            VIEW CODE
+          </a>
+          <span class="p-metric indigo" style="font-size:10px;padding:4px 9px;">0.91 F1</span>
+          <span class="p-metric amber" style="font-size:10px;padding:4px 9px;">&lt;40ms</span>
+        </div>
+      </article>
+      <article class="p-card reveal" style="transition-delay:0.1s">
+        <div class="p-card-top">
+          <span class="p-index">002</span>
+          <span class="p-metric green">97% ACCURACY</span>
+        </div>
+        <h3 class="p-name">Motion Detection Security</h3>
+        <p class="p-desc">
+          Event-based security camera system with real-time motion detection. Records video clips only on trigger events and dispatches email alerts with footage in under 1 second. Zero cloud dependency.
+        </p>
+        <div class="p-stack">
+          <span class="p-pill">OpenCV</span>
+          <span class="p-pill">NumPy</span>
+          <span class="p-pill">SMTP</span>
+          <span class="p-pill">Python</span>
+          <span class="p-pill">MOG2</span>
+        </div>
+        <div class="p-links">
+          <a href="https://github.com/MannPatel8284" target="_blank" class="p-link p-link-primary">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            VIEW CODE
+          </a>
+          <span class="p-metric amber" style="font-size:10px;padding:4px 9px;">&lt;1s ALERT</span>
+          <span class="p-metric green" style="font-size:10px;padding:4px 9px;">0.3% FP</span>
+        </div>
+      </article>
+      <article class="p-card reveal" style="transition-delay:0.2s">
+        <div class="p-card-top">
+          <span class="p-index">003</span>
+          <span class="p-metric indigo">&lt;50ms QUERY</span>
+        </div>
+        <h3 class="p-name">Student Management System</h3>
+        <p class="p-desc">
+          Native desktop GUI for institutional student records. Full CRUD operations, persistent SQLite backend, and table model capable of handling 10k+ records with sub-50ms query times. No subscription required.
+        </p>
+        <div class="p-stack">
+          <span class="p-pill">PyQt6</span>
+          <span class="p-pill">SQLite</span>
+          <span class="p-pill">Python</span>
+          <span class="p-pill">ORM</span>
+          <span class="p-pill">MVC</span>
+        </div>
+        <div class="p-links">
+          <a href="https://github.com/MannPatel8284" target="_blank" class="p-link p-link-primary">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            VIEW CODE
+          </a>
+          <span class="p-metric green" style="font-size:10px;padding:4px 9px;">100% CRUD</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="technical-stack">
+  <div class="wrap">
+    <div class="s-kicker">// capabilities</div>
+    <h2 class="s-title">Technical Stack</h2>
+    <p class="s-sub">Languages, frameworks and tooling drawn directly from shipped projects.</p>
+    <div class="stack-layout reveal">
+      <div class="stack-group">
+        <div class="stack-group-head">
+          <div class="stack-group-icon">👁️</div>
+          <div class="stack-group-name">Computer Vision & ML</div>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="stack-item-dot"></div>OpenCV</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>MediaPipe</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Head-Pose Estimation</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Background Subtraction</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Contour Detection</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Real-Time Pipelines</div>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-head">
+          <div class="stack-group-icon">⚙️</div>
+          <div class="stack-group-name">Backend & APIs</div>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="stack-item-dot"></div>Python</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Flask</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>REST APIs</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>WebSockets</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>SMTP Automation</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>PyQt6</div>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-head">
+          <div class="stack-group-icon">⚛️</div>
+          <div class="stack-group-name">Frontend</div>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="stack-item-dot"></div>React</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Chart.js</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>HTML / CSS</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Live Dashboards</div>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-head">
+          <div class="stack-group-icon">🗄️</div>
+          <div class="stack-group-name">Data & Cloud</div>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="stack-item-dot"></div>AWS</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>SQL / MySQL</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>SQLite</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Git & GitHub</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>C++</div>
+          <div class="stack-item"><div class="stack-item-dot"></div>Java</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:32px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--radius);padding:32px;" class="reveal">
+      <div class="s-kicker" style="margin-bottom:24px;">// proficiency</div>
+      <div class="stack-bar-item"><span class="stack-bar-label">Python</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:92%;"></div></div><span class="stack-bar-pct">92%</span></div>
+      <div class="stack-bar-item"><span class="stack-bar-label">OpenCV</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:88%;"></div></div><span class="stack-bar-pct">88%</span></div>
+      <div class="stack-bar-item"><span class="stack-bar-label">React</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:75%;"></div></div><span class="stack-bar-pct">75%</span></div>
+      <div class="stack-bar-item"><span class="stack-bar-label">Flask</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:80%;"></div></div><span class="stack-bar-pct">80%</span></div>
+      <div class="stack-bar-item"><span class="stack-bar-label">AWS</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:65%;"></div></div><span class="stack-bar-pct">65%</span></div>
+      <div class="stack-bar-item"><span class="stack-bar-label">C++ / Java</span><div class="stack-bar-track"><div class="stack-bar-fill" style="--w:70%;"></div></div><span class="stack-bar-pct">70%</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="wrap">
+    <div class="s-kicker">// get_in_touch</div>
+    <h2 class="s-title">Contact</h2>
+    <p class="s-sub">Open to internships, collabs, and interesting problems. Message goes straight to my inbox.</p>
+
+    <div class="contact-layout reveal">
+      
+      <div class="contact-info">
+        <div class="contact-info-block">
+          <div class="ci-label">// direct_line</div>
+          <div class="ci-value">
+            <a href="mailto:patelmann274@gmail.com" class="ci-link">patelmann274@gmail.com</a>
+            <button class="ci-copy" id="copyEmail" title="Copy email">
+              <svg id="copyIcon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+            <span class="ci-copied" id="copiedBadge">COPIED</span>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="ci-label">// github</div>
+          <div class="ci-value">
+            <a href="https://github.com/MannPatel8284" target="_blank" class="ci-link">github.com/MannPatel8284</a>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="ci-label">// resume</div>
+          <div class="ci-value">
+            <a href="Mann_Patel_Resume.pdf" target="_blank" class="ci-link">Mann_Patel_Resume.pdf</a>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="ci-label">// status</div>
+          <div class="ci-value">
+            <span class="ci-status-dot"></span>
+            <span class="ci-status-text">Open to internships</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <div class="gmail-notice">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          OPENS GMAIL IN YOUR BROWSER 
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="cf-row">
+            <div class="cf-group" id="grp-name">
+              <label class="cf-label" for="cf-name">YOUR NAME <span class="cf-req">*</span></label>
+              <input class="cf-input" id="cf-name" type="text" placeholder="e.g. Jane Smith" autocomplete="off"/>
+              <div class="cf-err" id="err-name">Name is required.</div>
+            </div>
+            <div class="cf-group" id="grp-email">
+              <label class="cf-label" for="cf-email">YOUR EMAIL <span class="cf-req">*</span></label>
+              <input class="cf-input" id="cf-email" type="email" placeholder="you@example.com" autocomplete="off"/>
+              <div class="cf-err" id="err-email">Enter a valid email.</div>
+            </div>
+          </div>
+          <div class="cf-group" id="grp-subject">
+            <label class="cf-label">SUBJECT <span class="cf-req">*</span></label>
+            <div class="cf-chips">
+              <button type="button" class="cf-chip active" data-val="Internship Opportunity">Internship Opportunity</button>
+              <button type="button" class="cf-chip" data-val="Project Collaboration">Project Collaboration</button>
+              <button type="button" class="cf-chip" data-val="General Inquiry">General Inquiry</button>
+              <button type="button" class="cf-chip" data-val="Other">Other</button>
+            </div>
+            <input type="hidden" id="cf-subject" value="Internship Opportunity"/>
+          </div>
+          <div class="cf-group" id="grp-msg">
+            <label class="cf-label" for="cf-msg">MESSAGE <span class="cf-req">*</span></label>
+            <textarea class="cf-input cf-textarea" id="cf-msg" placeholder="Tell me about the opportunity, project, or question..." maxlength="1000"></textarea>
+            <div class="cf-meta">
+              <div class="cf-err" id="err-msg">Message must be at least 20 characters.</div>
+              <span class="cf-counter"><span id="charCount">0</span> / 1000</span>
+            </div>
+          </div>
+          <div class="cf-footer">
+            <button type="submit" class="cf-submit" id="cfSubmit">
+              <span id="cfBtnText">SEND VIA GMAIL</span>
+              <span id="cfBtnIcon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </span>
+            </button>
+            
+          </div>
+        </form>
+
+        <div class="cf-success" id="cfSuccess">
+          <div class="cf-success-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="cf-success-title">GMAIL OPENED</div>
+          <div class="cf-success-sub">A new Gmail compose window opened in your browser.<br/>If it didn't, email me directly at<br/><a href="mailto:patelmann274@gmail.com">patelmann274@gmail.com</a></div>
+          <button class="cf-reset" id="cfReset">SEND ANOTHER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume-cta">
+  <div class="wrap">
+    <div class="terminal-card reveal">
+      <div class="terminal-bar">
+        <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+        <span class="terminal-title">mann@patel — bash — 80×24</span>
+      </div>
+      <div class="terminal-body">
+        <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cmd">cat about.txt</span></div>
+        <div class="t-line"><span class="t-output">Name        : Mann Patel</span></div>
+        <div class="t-line"><span class="t-output">Role        : AI/ML + Full-Stack Engineer</span></div>
+        <div class="t-line"><span class="t-output">Status      : B.Sc Computer Science · Grad 2028</span></div>
+        <div class="t-line"><span class="t-output">Focus       : Computer Vision · Real-Time ML Systems</span></div>
+        <div class="t-line"><span class="t-output">Email       : patelmann274@gmail.com</span></div>
+        <div class="t-line"><span class="t-output">GitHub      : github.com/MannPatel8284</span></div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cmd">./get-resume.sh</span></div>
+        <div class="t-line"><span class="t-output-dim">Fetching Mann_Patel_Resume.pdf... </span><span class="t-output">READY</span></div>
+        <div class="t-line"><span class="t-prompt">~$</span> <span class="t-cursor-block"></span></div>
+      </div>
+      <div class="terminal-actions">
+        <a href="Mann_Patel_Resume.pdf" target="_blank" class="btn-indigo">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          DOWNLOAD RESUME
+        </a>
+        <a href="https://github.com/MannPatel8284" target="_blank" class="btn-ghost">GITHUB PROFILE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-sig">mann<span>@</span>patel ~ © 2026</div>
+      <div class="footer-copy">Built with HTML · CSS · JS</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════
+   THEME TOGGLE
+════════════════════════════════════ */
+const html = document.documentElement;
+
+function getTheme() {
+  return localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+}
+
+function applyTheme(t) {
+  html.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  // Sync pill knobs
+  const pills = document.querySelectorAll('.toggle-pill');
+  pills.forEach(p => {
+    p.classList.toggle('light', t === 'light');
+    const knob = p.querySelector('.toggle-pill-knob');
+    if (knob) knob.textContent = t === 'light' ? '☀️' : '🌙';
+  });
+}
+
+// Init on load
+applyTheme(getTheme());
+
+// Desktop button
+document.getElementById('themeToggle').addEventListener('click', () => {
+  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// Mobile pill
+document.getElementById('mobilePill').addEventListener('click', () => {
+  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+/* ════════════════════════════════════
+   CUSTOM CURSOR (pointer devices only)
+════════════════════════════════════ */
+const isPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+if (isPointer) {
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx+'px'; cursor.style.top = my+'px';
+  });
+  
+  (function animRing(){
+    rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
+    ring.style.left = rx+'px'; ring.style.top = ry+'px';
+    requestAnimationFrame(animRing);
+  })();
+  
+  document.querySelectorAll('a,button,.p-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width='18px'; cursor.style.height='18px';
+      ring.style.width='50px'; ring.style.height='50px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width='10px'; cursor.style.height='10px';
+      ring.style.width='34px'; ring.style.height='34px';
+    });
+  });
+}
+
+/* ════════════════════════════════════
+   MOBILE NAV
+════════════════════════════════════ */
+function openMobile()  { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobile() { document.getElementById('mobileNav').classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', openMobile);
+document.getElementById('navClose').addEventListener('click', closeMobile);
+document.querySelectorAll('.mobile-nav-link').forEach(a => a.addEventListener('click', closeMobile));
+
+/* ════════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════════ */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { 
+      e.target.classList.add('visible'); 
+      revealObs.unobserve(e.target); 
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ════════════════════════════════════
+   PROFICIENCY BARS
+════════════════════════════════════ */
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stack-bar-fill').forEach(b => {
+        b.style.width = b.style.getPropertyValue('--w');
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.stack-bar-item').forEach(el => {
+  const p = el.closest('div'); if (p) barObs.observe(p);
+});
+
+/* ════════════════════════════════════
+   CONTACT FORM 
+════════════════════════════════════ */
+document.querySelectorAll('.cf-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.cf-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    document.getElementById('cf-subject').value = chip.dataset.val;
+  });
+});
+
+const msgEl    = document.getElementById('cf-msg');
+const charCount = document.getElementById('charCount');
+msgEl.addEventListener('input', () => {
+  const len = msgEl.value.length;
+  charCount.textContent = len;
+  charCount.parentElement.className = 'cf-counter' + (len > 800 ? ' warn' : '');
+});
+
+document.getElementById('copyEmail').addEventListener('click', () => {
+  navigator.clipboard.writeText('patelmann274@gmail.com').then(() => {
+    const badge = document.getElementById('copiedBadge');
+    badge.classList.add('show');
+    setTimeout(() => badge.classList.remove('show'), 2000);
+  });
+});
+
+function setError(grpId, show) {
+  const g = document.getElementById(grpId);
+  show ? g.classList.add('has-error') : g.classList.remove('has-error');
+}
+
+function validateName() {
+  const ok = document.getElementById('cf-name').value.trim().length >= 2;
+  setError('grp-name', !ok); return ok;
+}
+function validateEmail() {
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cf-email').value.trim());
+  setError('grp-email', !ok); return ok;
+}
+function validateMsg() {
+  const ok = msgEl.value.trim().length >= 20;
+  setError('grp-msg', !ok); return ok;
+}
+
+document.getElementById('cf-name').addEventListener('blur', validateName);
+document.getElementById('cf-email').addEventListener('blur', validateEmail);
+msgEl.addEventListener('blur', validateMsg);
+
+['cf-name','cf-email','cf-msg'].forEach(id => {
+  const grpMap = {'cf-name':'grp-name','cf-email':'grp-email','cf-msg':'grp-msg'};
+  document.getElementById(id).addEventListener('input', () => {
+    document.getElementById(grpMap[id]).classList.remove('has-error');
+  });
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const isNameValid = validateName();
+  const isEmailValid = validateEmail();
+  const isMsgValid = validateMsg();
+  
+  if (!isNameValid || !isEmailValid || !isMsgValid) return;
+
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value;
+  const msg     = msgEl.value.trim();
+
+  const body = `Hi Mann,\n\nMy name is ${name} (${email}).\n\n${msg}\n\nBest,\n${name}`;
+
+  /* ── Gmail compose URL ── */
+  const gmailURL = 'https://mail.google.com/mail/?view=cm&fs=1'
+    + '&to=' + encodeURIComponent('patelmann274@gmail.com')
+    + '&su=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+
+  const btn     = document.getElementById('cfSubmit');
+  const btnText = document.getElementById('cfBtnText');
+  btn.classList.add('sending');
+  btnText.textContent = 'OPENING GMAIL...';
+
+  setTimeout(() => {
+    window.open(gmailURL, '_blank');
+    setTimeout(() => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('cfSuccess').classList.add('visible');
+      btn.classList.remove('sending');
+      btnText.textContent = 'SEND VIA GMAIL';
+    }, 500);
+  }, 600);
+});
+
+document.getElementById('cfReset').addEventListener('click', () => {
+  document.getElementById('cf-name').value = '';
+  document.getElementById('cf-email').value = '';
+  msgEl.value = '';
+  charCount.textContent = '0';
+  document.querySelectorAll('.cf-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.cf-chip[data-val="Internship Opportunity"]').classList.add('active');
+  document.getElementById('cf-subject').value = 'Internship Opportunity';
+  document.querySelectorAll('.cf-group').forEach(g => g.classList.remove('has-error'));
+  document.getElementById('cfSuccess').classList.remove('visible');
+  document.getElementById('contactForm').style.display = 'flex';
+});
+</script>
+</body>
+</html>
