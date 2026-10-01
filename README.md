@@ -16,16 +16,16 @@ I continuously strive to solve real-world problems through efficient and scalabl
 
 ## 🎓 Education  
 **University of Wisconsin – Green Bay, Green Bay, WI**  
-**B.S. in Computer Science – Artificial Intelligence & Data Science Emphasis**  
+**B.S. in Computer Science – Artificial Intelligence Emphasis**  
 *Expected Graduation: May 2028*
 
 ---
 
 ## 💼 Experience  
 
-### **Software Developer | SaiKet Systems (Remote)**  
-**Dec 2025 – Jan 2026**  
-- Developed software and web solutions using Python, MySQL, and modern tools  
+### **Software Developer Engineer | Urology Associates Of Green Bay)**  
+**May 2026 – August 2026**  
+- Developed software and web solutions using Python,Reactjs and modern tools  
 - Designed clean, user-friendly interfaces for better user experience  
 - Worked with cross‑functional teams on debugging, testing, and SDLC  
 - Gained experience in full‑stack development and Agile methodology  
